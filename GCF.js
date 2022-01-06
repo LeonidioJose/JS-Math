@@ -5,7 +5,7 @@
  */
 
 function gcd(...i) {
-  let _i = [...i]
+  const _i = [...i]
   let divs = {}
   for(let x of _i) {
     divs[String(x)] = []
@@ -14,7 +14,7 @@ function gcd(...i) {
       if(x % yy == 0) divs[String(x)].push(yy)
     }
   }
-  let entr = Object.values(divs)
+  const entr = Object.values(divs)
   let r = entr.reduce((p,c) => p.filter(e => c.includes(e))).sort((a, b) => a -b)
   return r.pop()
 }
